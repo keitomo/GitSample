@@ -9,7 +9,7 @@ public class RockController : MonoBehaviour
 
     void Start(){
         this.fallSpeed = 0.01f + 0.01F * Random.value;
-        this.rotSpeed = 0.5f + 0.5f * Random.value;
+        this.rotSpeed = 0.7f + 0.7f * Random.value;
     }
 
     void Update(){
