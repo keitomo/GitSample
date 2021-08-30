@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIController : MonoBehaviour
+{
+    int score = 0;
+    GameObject scoreText;
+    GameObject gameOverText;
+    bool gameOverFlag=false;
+
+    public void GameOver(){
+        this.gameOverText.GetComponent<Text>().text="GameOver";
+        this.gameOverFlag=true;
+    }
+
+    public void AddScore(){
+        if (!gameOverFlag)
+            this.score += 10;
+    }
+
+    void Start()
+    {
+        this.scoreText = GameObject.Find("Score");
+        this.gameOverText=GameObject.Find("GameOver");
+    }
+
+    void Update()
+    {
+        scoreText.GetComponent<Text> ().text="Score:"+score.ToString("D4");
+    }
+}
